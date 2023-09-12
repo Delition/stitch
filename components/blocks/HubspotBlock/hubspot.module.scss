@@ -1,0 +1,25 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 32px;
+  .hs_submit{
+    display: flex;
+  }
+}
+.content_wrapper {
+  background-color: $neutral_minus_8;
+  padding: 64px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include max-width($tabletXL) {
+    padding: 32px;
+  }
+
+  @include max-width($phoneXL) {
+    padding: 32px 16px;
+  }
+}

@@ -1,0 +1,113 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  @include display-flex(space-between);
+  margin-bottom: 12px;
+}
+
+.left_content {
+  width: 37%;
+  @include max-width($tabletL) {
+    width: 0;
+  }
+}
+
+.right_content {
+  width: 63%;
+
+  @include max-width($tabletL) {
+    width: 100%;
+  }
+}
+
+.posted_date {
+  @include font-style(12px, 400, $ultraDarkPurple, null, 1.2, RationalTW);
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.title {
+  @include font-style(48px, 400, $neutral_9, null, 1.2, RecklessNeue);
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  @include font-style(18px, 400, $ultraDarkPurple, null, 1.75);
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+
+.author {
+  @include font-style(14px, 400, $ultraDarkPurple, null, 1.2);
+  display: flex;
+  margin-bottom: 32px;
+
+  p {
+    margin: 0;
+  }
+
+  @include max-width($phoneXL) {
+    display: block;
+
+    p {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.read_time {
+  margin-left: 16px;
+}
+
+.category_item {
+  @include font-style(12px, 500, $neutral_9, null, 1, RationalMedium);
+  display: inline-block;
+  border-radius: 1000px;
+  padding: 6px 12px;
+  margin-bottom: 32px;
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+}
+
+.category_item_red {
+  color: $red;
+  border: 1px solid $red_minus_3;
+}
+
+.category_item_green {
+  color: $green_2;
+  border: 1px solid $green_2;
+}
+
+.category_item_violet {
+  color: $purple;
+  border: 1px solid $purple_minus_4;
+}
+
+.category_item_orange {
+  color: $orange;
+  border: 1px solid $orange;
+}
+
+.category_item_blue {
+  color: $blue;
+  border: 1px solid $blue;
+}
+
+.category_item_purple {
+  color: $purple;
+  border: 1px solid $purple;
+}
+
+.horizontal_line {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 2px;
+  background-color: $ultraDarkPurple;
+}

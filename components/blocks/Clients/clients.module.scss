@@ -1,0 +1,46 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 64px 0;
+
+  @include max-width($laptop) {
+    padding: 48px 0;
+  }
+
+  @include max-width($phoneXL) {
+    padding: 32px 0;
+  }
+}
+
+.title {
+  @include font-style(18px, 500, $neutral_9, center, 1.6, RationalMedium);
+  margin-bottom: 64px;
+
+  @include max-width($laptop) {
+    margin-bottom: 48px;
+  }
+
+  @include max-width($phoneXL) {
+    max-width: 350px;
+    margin-inline: auto;
+  }
+}
+
+.list {
+  height: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.list_item {
+  white-space: nowrap;
+  margin: 0 40px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    object-fit: contain
+  }
+}

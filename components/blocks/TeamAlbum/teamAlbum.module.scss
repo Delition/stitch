@@ -1,0 +1,10 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+
+  h2 {
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+}

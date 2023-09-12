@@ -1,0 +1,93 @@
+@font-face {
+        font-family: 'Rational';
+        src:
+        url('../fonts/rational/web/rational-book.eot') format("eot"),
+        url('../fonts/rational/web/rational-book.woff') format('woff'),
+        url('../fonts/rational/web/rational-book.woff2') format("woff2"),
+        url('../fonts/rational/otf/rational-book.otf') format("otf");
+        font-style: normal;
+        font-weight: normal;
+}
+
+@font-face {
+        font-family: 'RationalItalic';
+        src:
+        url('../fonts/rational/web/rational-bookitalic.eot') format("eot"),
+        url('../fonts/rational/web/rational-bookitalic.woff') format("woff"),
+        url('../fonts/rational/web/rational-bookitalic.woff2') format("woff2"),
+        url('../fonts/rational/otf/rational-bookitalic.otf') format("otf");
+        font-style: italic;
+        font-weight: normal;
+}
+
+@font-face {
+        font-family: 'RationalMedium';
+        src:
+        url('../fonts/rational/web/rational-medium.eot') format("eot"),
+        url('../fonts/rational/web/rational-medium.woff') format("woff"),
+        url('../fonts/rational/web/rational-medium.woff2') format("woff2"),
+        url('../fonts/rational/otf/rational-medium.otf') format("otf");
+        font-style: normal;
+        font-weight: 500;
+}
+
+@font-face {
+        font-family: 'RationalSemiBold';
+        src:
+        url('../fonts/rational/web/rational-semibold.eot') format("eot"),
+        url('../fonts/rational/web/rational-semibold.woff') format("woff"),
+        url('../fonts/rational/web/rational-semibold.woff2') format("woff2"),
+        url('../fonts/rational/otf/rational-semibold.otf') format("otf");
+        font-style: normal;
+        font-weight: 600;
+}
+
+@font-face {
+        font-family: 'RationalBold';
+        src:
+        url('../fonts/rational/web/rational-semibold.eot') format("eot"),
+        url('../fonts/rational/web/rational-semibold.woff') format("woff"),
+        url('../fonts/rational/web/rational-semibold.woff2') format("woff2"),
+        url('../fonts/rational/otf/rational-semibold.otf') format("otf");
+        font-style: normal;
+        font-weight: 700;
+}
+
+@font-face {
+  font-family: 'RationalTW';
+  src:
+          url('../fonts/rational/web/rationaltw-book.eot') format("eot"),
+          url('../fonts/rational/web/rationaltw-book.woff') format("woff"),
+          url('../fonts/rational/web/rationaltw-book.woff2') format("woff2"),
+          url('../fonts/rational/otf/rationaltw-book.otf') format("otf");
+}
+
+@font-face {
+        font-family: 'RecklessNeue';
+        src:
+                url('../fonts/recklessneue/ttf/recklessneue-book.ttf') format("truetype"),
+                url('../fonts/recklessneue/web/recklessneue-book.woff') format("woff"),
+                url('../fonts/recklessneue/web/recklessneue-book.woff2') format("woff2");
+        font-style: normal;
+        font-weight: normal;
+}
+
+@font-face {
+        font-family: 'RecklessNeueItalic';
+        src:
+                url('../fonts/recklessneue/web/recklessneue-bookitalic.ttf') format("truetype"),
+                url('../fonts/recklessneue/web/recklessneue-bookitalic.woff') format("woff"),
+                url('../fonts/recklessneue/web/recklessneue-bookitalic.woff2') format("woff2");
+        font-style: italic;
+        font-weight: normal;
+}
+
+@font-face {
+        font-family: 'RecklessNeueMedium';
+        src:
+                url('../fonts/recklessneue/web/recklessneue-medium.ttf') format("truetype"),
+                url('../fonts/recklessneue/web/recklessneue-medium.woff') format("woff"),
+                url('../fonts/recklessneue/web/recklessneue-medium.woff2') format("woff2");
+        font-style: normal;
+        font-weight: 500;
+}

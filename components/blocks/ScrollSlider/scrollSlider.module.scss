@@ -1,0 +1,48 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  margin: 0 -32px;
+  > div {
+    padding: 0 32px;
+  }
+
+  @include max-width($tabletL) {
+    margin: 0 -24px;
+    > div {
+      padding: 0 24px;
+    }
+  }
+  @include max-width($phoneXL) {
+    margin: 0 -16px;
+    > div {
+      padding: 0 16px;
+    }
+  }
+}
+
+.item_wrapper {
+  padding: 20px 20px 24px 24px;
+  background: $white;
+  border-radius: 16px;
+}
+
+.image_wrapper {
+  margin-bottom: 16px;
+}
+
+.circle_image {
+  span {
+    border-radius: 50%;
+  }
+}
+
+.item_title {
+  @include font-style(16px, 600, $neutral_9, null, 1.6, RationalSemiBold);
+  margin-bottom: 8px;
+}
+
+.item_description {
+  @include font-style(15px, 400, $neutral_9, null, 1.6);
+  margin: 0;
+}

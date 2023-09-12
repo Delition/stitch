@@ -1,0 +1,199 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 64px 32px;
+}
+
+.content_wrapper {
+  max-width: 1376px;
+  margin-inline: auto;
+}
+
+.tab_list {
+  @include display-flex(center);
+  list-style-type: none;
+  margin-bottom: 64px;
+
+  .tab_item:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  .tab_item_active {
+    .tab_button {
+      background: $purple;
+      color: $white;
+    }
+  }
+
+  .tab_button {
+    @include font-style(15px, 500, $neutral_9, null, 18px, RationalMedium);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    border: none;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 1000px;
+    background-color: transparent;
+    transition: all .15s ease;
+
+    &:hover {
+      background-color: $purple_minus_6;
+    }
+
+  }
+}
+
+.card {
+  &_list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    @include max-width($tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &_item {
+    width: 33%;
+    background-color: $neutral_minus_8;
+    border-radius: 24px;
+    padding: 24px;
+
+    a {
+      background-color: $neutral_9;
+      margin-bottom: 33.5px;
+
+      &:hover {
+        background-color: $purple;
+        color: $white;
+      }
+
+      svg {
+        fill: #ffffff;
+      }
+    }
+
+    @include max-width($tablet) {
+      width: 100%;
+    }
+  }
+
+  &_title {
+    @include font-style(24px, 500, $neutral_9, null, 42px, RationalMedium);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    margin-bottom: 8px;
+  }
+
+  &_description {
+    @include font-style(17px, 500, $neutral_9, null, 27px);
+    margin-bottom: 24px;
+
+    p {
+      font-family: RationalMedium;
+    }
+  }
+
+  &_after {
+    margin-bottom: 20px;
+  }
+
+  &_inner {
+    background-color: $white;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 32px;
+
+    h3 {
+      font-weight: 500;
+      font-family: RationalMedium;
+      margin-bottom: 16px;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    h2 {
+      @include font-style(56px, 400, $purple, null, 1, RecklessNeue);
+      font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    h4, p, ul li {
+      @include font-style(15px, 500, $neutral_9, null, 24px, RationalMedium);
+      letter-spacing: -0.01em;
+      font-feature-settings: 'pnum' on, 'onum' on;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        @include font-style(15px, 400, $neutral_9, null, 24px, Rational);
+        position: relative;
+        padding-left: 21px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 13px;
+          height: 24px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+          background-image: url('/pricing-page-arrow.svg');
+        }
+
+        strong {
+          @include font-style(15px, 500, $neutral_9, null, 24px, RationalMedium);
+        }
+      }
+    }
+  }
+
+  &_features {
+    margin-top: 32px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+
+      li {
+        position: relative;
+        @include font-style(14px, 500, $neutral_9, null, 17px, RationalMedium);
+        letter-spacing: -0.01em;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        padding-left: 28px;
+
+        &:not(:first-child) {
+          margin-top: 8px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -1.5px;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+          background-image: url('/check.svg');
+        }
+      }
+    }
+  }
+}

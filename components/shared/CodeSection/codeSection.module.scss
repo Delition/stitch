@@ -1,0 +1,26 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.code_wrapper {
+  margin-bottom: 20px;
+
+  pre {
+    padding: 24px 271px 24px 32px!important;
+    background: $purple_2!important;
+    border-radius: 4px;
+  }
+}
+
+.accordion_wrapper{
+  pre {
+    padding: 24px 271px 24px 32px!important;
+    background: $ultraDarkPurple!important;
+    border-radius: 4px;
+    margin: 0 0 8px;
+  }
+
+  p{
+    @include font-style(15px, 400, $neutral_9, null, 1.6);
+    margin-bottom: 16px;
+  }
+}

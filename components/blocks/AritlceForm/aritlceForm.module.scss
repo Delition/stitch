@@ -1,0 +1,69 @@
+@import 'styles/mixins';
+@import 'styles/variables';
+
+.blog_form_wrapper {
+  padding: 32px;
+  @include max-width($tabletL) {
+    padding: 32px 16px;
+  }
+}
+
+.container {
+  background: $neutral_minus_8;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  gap: 80px;
+
+  @include max-width($laptopS) {
+    gap: 34px;
+  }
+  @include max-width($tabletXL) {
+    flex-direction: column;
+  }
+  @include max-width($tabletL) {
+    padding: 32px 16px;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  @include font-style(12px, 500, $neutral_9, null, 1, RationalMedium);
+  list-style-type: none;
+  border: 1px solid $purple;
+  border-radius: 1000px;
+  padding: 4px 8px;
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  margin-bottom: 8px;
+}
+
+.title {
+  @include font-style(36px, 400, $neutral_9, null, 1.3, RecklessNeue);
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+  max-width: 686px;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+
+  @include max-width($phoneXL) {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+}
+
+.text {
+  @include font-style(15px, 500, $neutral_2, null, 1.6);
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'onum' on;
+  margin-bottom: 0;
+}
+
+.form_part,
+.text_part {
+  max-width: 50%;
+  width: 100%;
+
+  @include max-width($tabletXL) {
+    max-width: 100%;
+  }
+}

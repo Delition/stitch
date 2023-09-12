@@ -1,0 +1,17 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.hero {
+  margin-top: -76px;
+
+  @include max-width($tabletL) {
+    span {
+      img {
+        object-fit: cover!important;
+      }
+      span {
+        height: 240px !important;
+      }
+    }
+  }
+}

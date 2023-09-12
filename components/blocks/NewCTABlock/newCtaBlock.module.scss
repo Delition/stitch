@@ -1,0 +1,192 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.without_background {
+  padding: 0;
+
+  div {
+    background-color: $white;
+  }
+}
+
+.content_wrapper {
+  position: relative;
+  background-color: $neutral_minus_7;
+  padding: 128px 64px;
+
+  &.dark {
+    background-color: $neutral_9;
+
+    .badge, .title, .text {
+      color: $white;
+    }
+
+    .card {
+      &_item {
+        padding: 24px 24px 32px;
+        background: #231E2B;
+        border-radius: 16px;
+      }
+
+      &_title, &_subtitle {
+        color: $white;
+      }
+
+      &_subtitle {
+        &, p {
+          margin: 0;
+        }
+      }
+    }
+
+    .down_content > div:first-child > button {
+      border: 1px solid $white;
+
+      &::before {
+        background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' fill-rule='evenodd' d='M12.9697 3.96967c.2929-.29289.7677-.29289 1.0606 0l7.5 7.50003c.1407.1406.2197.3314.2197.5303 0 .1989-.079.3897-.2197.5303l-7.5 7.5c-.2929.2929-.7677.2929-1.0606 0-.2929-.2929-.2929-.7677 0-1.0606l6.2196-6.2197H3c-.41421 0-.75-.3358-.75-.75s.33579-.75.75-.75h16.1893l-6.2196-6.21967c-.2929-.29289-.2929-.76777 0-1.06066Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A") no-repeat center / 24px;
+      }
+    }
+  }
+
+  &.gray {
+    background-color: $neutral_minus_7;
+  }
+
+  &.violet {
+    background-color: $purple_minus_7;
+  }
+
+  @include max-width($tabletXL) {
+    padding: 96px 32px;
+  }
+
+  @include max-width($phoneXL) {
+    padding: 64px 16px;
+  }
+}
+
+.top_content {
+  @include display-flex();
+  margin-bottom: 48px;
+}
+
+.content {
+  max-width: 875px;
+  width: 100%;
+
+  @include max-width($tabletXL) {
+    max-width: 100%;
+  }
+}
+
+.badges_list {
+  @include display-flex();
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.badge {
+  @include font-style(12px, 500, $neutral_9, null, 1, RationalMedium);
+  list-style-type: none;
+  border: 1px solid $purple;
+  border-radius: 1000px;
+  padding: 4px 8px;
+}
+
+.title {
+  @include font-style(48px, 400, $neutral_9, null, 1, RecklessNeue);
+  letter-spacing: -0.02em;
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss12' on, 'ss13' on, 'ss05' on, 'ss07' on, 'ss11' on, 'ss06' on, 'ss10' on, 'ss04' on, 'kern' off;
+  margin-bottom: 24px;
+
+  @include max-width($tabletXL) {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    font-feature-settings: 'pnum' on, 'lnum' on, 'ss05' on, 'ss07' on, 'ss10' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss04' on;
+  }
+  @include max-width($phoneXL) {
+    font-size: 36px;
+    line-height: 43px;
+    font-feature-settings: 'pnum' on, 'lnum' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'ss04' on, 'kern' off;
+  }
+}
+
+.text {
+  @include font-style(17px, 400, $neutral_9, null, 27px, Rational);
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'onum' on;
+  margin-bottom: 0;
+}
+
+.down_content {
+  @include max-width($tabletL + 1) {
+    overflow: visible;
+    > div {
+      position: relative;
+
+      > button {
+        top: auto !important;
+        bottom: calc(100% + 32px) !important;
+      }
+    }
+  }
+}
+
+.cards_list {
+  @include display-flex(space-between);
+  padding: 0;
+  margin: 0 0 64px;
+
+  @include max-width($tabletXL) {
+    margin: 0 0 48px;
+  }
+}
+
+.card_item {
+  list-style-type: none;
+  flex: 1;
+  margin-right: 24px;
+
+  @include min-width($laptop) {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include max-width($laptop) {
+    max-width: 230px;
+  }
+
+  @include max-width($tabletXL) {
+    margin-right: 16px;
+  }
+}
+
+.card_title {
+  @include font-style(17px, 500, $neutral_9, null, 27px, RationalMedium);
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'onum' on;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+
+.card_subtitle {
+  @include font-style(13px, 400, $neutral_9, null, 1.6);
+  margin-bottom: 20px;
+}
+
+.buttons_wrapper {
+  @include display-flex();
+  margin-top: 48px;
+
+  div {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  @include max-width($phone) {
+    margin-top: 32px;
+  }
+}

@@ -1,0 +1,219 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 32px;
+
+  @include max-width($tabletXL) {
+    padding: 24px;
+  }
+
+  @include max-width($phoneXL) {
+    padding: 16px;
+  }
+}
+
+.content_wrapper {
+  @include display-flex(space-between);
+  background-color: $neutral_minus_8;
+  border-radius: 24px;
+  padding: 64px;
+  gap: 64px;
+
+  &__right {
+    flex-direction: row-reverse;
+  }
+
+  @include max-width($tabletXL) {
+    @include display-flex(null, $direction: column);
+    padding: 32px;
+    gap: 32px;
+    &__right {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @include max-width($phoneXL) {
+    padding: 32px 16px;
+  }
+}
+
+.left, .right {
+  width: 50%;
+
+  @include max-width($tabletXL) {
+    width: 100%;
+  }
+}
+
+.right {
+  a {
+    border: 1px solid $neutral_9;
+    transition: all 300ms ease;
+
+    &:hover {
+      border: 1px solid $purple;
+    }
+
+    &:focus {
+      border: 1px solid $purple_2;
+    }
+  }
+}
+
+.tabs_item {
+  @include font-style(15px, 500, $neutral_9, null, 1.2, RationalMedium);
+  list-style-type: none;
+  padding: 4px 12px;
+  border-radius: 1000px;
+  transition: all 300ms ease;
+  font-feature-settings: 'dlig' on;
+
+  &:hover, focus {
+    cursor: pointer;
+    color: $purple;
+    background-color: $neutral_minus_8;
+  }
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @include max-width($phoneXL) {
+    margin-right: 4px;
+  }
+}
+
+.subtitle {
+  @include font-style(36px, 400, $neutral_9, null, 1.3, RecklessNeue);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+
+  @include max-width($phoneXL) {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+}
+
+.text {
+  @include display-flex(space-between);
+  gap: 16px;
+  margin-bottom: 48px;
+
+  @include max-width($phoneXL) {
+    @include display-flex(null, $direction: column);
+    margin-bottom: 32px;
+  }
+
+  &, > div p {
+    @include font-style(15px, 400, $neutral_9, null, 1.6);
+  }
+}
+
+.text_right,
+.text_left {
+  width: 50%;
+  @include max-width($phoneXL) {
+    width: 100%;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 32px;
+
+  &_item {
+    user-select: none;
+    background-color: transparent;
+    padding: 4px 12px;
+    border-radius: 100px;
+    transition: all .15s linear;
+    @include font-style(15px, 500, $neutral_9, null, 1.2, RationalMedium);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    &.active_tab {
+      background-color: $purple;
+      color: $white;
+    }
+
+    &:active {
+      color: $purple;
+      background-color: $neutral_minus_8;
+    }
+
+    @media(hover: hover) {
+      &:hover {
+        cursor: pointer;
+        color: $purple;
+        background-color: $neutral_minus_8;
+      }
+    }
+  }
+
+  @include max-width($tablet) {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    margin: 0 -16px 64px -16px;
+    padding: 0 16px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &_item {
+      flex-shrink: 0;
+    }
+  }
+}
+
+.list {
+  &_item {
+    display: none;
+
+    &.active_tab {
+      display: block;
+    }
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+
+  > span img {
+    object-fit: contain;
+  }
+
+  > div > a {
+    margin-left: 8px;
+    padding: 0;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+.content {
+  display: none;
+  align-items: center;
+  max-width: 592px;
+  max-height: 592px;;
+  margin: auto;
+
+  img, video, svg {
+    display: flex;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  &.active_tab {
+    display: flex;
+  }
+}

@@ -1,0 +1,71 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 64px;
+
+  @include max-width($tabletL){
+    padding: 64px 32px;
+  }
+
+  @include max-width($phoneXL){
+    padding: 32px 16px;
+  }
+}
+
+.list {
+  @include display-flex(center, null, wrap);
+  margin: -24px -40px;
+  padding: 0;
+
+  @include max-width($tabletL){
+    margin: 0 -13px -48px;
+  }
+
+  @include max-width($phoneXL){
+    margin: 0  -11px -32px;
+  }
+}
+
+.list_item {
+  list-style-type: none;
+  margin: 24px 40px;
+  flex: 1;
+
+  @include max-width($tabletL){
+    margin: 0 0 48px;
+  }
+
+  @include max-width($phoneXL){
+    margin: 0 0 32px;
+  }
+}
+
+.content_wrapper {
+  @include display-flex(null, center, $direction: column);
+  text-align: center;
+  padding: 0 16px;
+
+  @include max-width($tabletL){
+    padding: 0 13px;
+  }
+
+  @include max-width($phoneXL){
+    padding: 0 5px;
+  }
+}
+
+.image_wrapper {
+  width: 120px;
+  height: 120px;
+
+  span {
+    border-radius: 50%;
+  }
+}
+
+.name {
+  @include font-style($family: RationalMedium);
+  display: inline-block;
+  margin-top: 12px;
+}

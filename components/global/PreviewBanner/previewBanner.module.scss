@@ -1,0 +1,42 @@
+@import "styles/variables";
+
+.container {
+  padding: 16px;
+  background-color: $green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_container {
+    display: flex;
+    padding-right: 8px;
+}
+
+.icon {
+    flex-direction: row;
+}
+
+.message {
+    max-width: 768px;
+    font-size: 18px;
+    line-height: 24px;
+    color: $white;
+    margin: 0;
+}
+
+.exit_link {
+    padding-left: 4px;
+    padding-right: 4px;
+    text-decoration-line: underline;
+
+    &:hover {
+        color: $purple_2;
+    }
+}

@@ -1,0 +1,20 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 64px 24px;
+  background: $neutral_minus_8;
+
+  @include max-width($tabletL){
+    padding: 24px;
+  }
+
+  @include max-width($phoneXL){
+    padding: 16px;
+  }
+}
+
+.table_wrapper{
+  margin-inline: auto;
+  max-width: 1144px;
+}

@@ -1,0 +1,90 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  max-width: 310px;
+  @include max-width($tabletXL) {
+    max-width: 100%;
+  }
+}
+
+.title {
+  @include font-style(21px, 500, $neutral_9, null, 25px, RationalMedium);
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss06' on;
+  margin-bottom: 16px;
+}
+
+.input_wrapper {
+  @include display-flex();
+
+  //input {
+  //  @include font-style(15px, 400, $neutral_9, null, 1.2);
+  //  padding: 12px 16px;
+  //  border-radius: 12px;
+  //  width: 371px;
+  //  height: 42px;
+  //  margin-right: 8px;
+  //}
+
+  placeholder {
+    @include font-style(15px, 400, $neutral_1, null, 1.2);
+  }
+
+  @include max-width($phoneXL) {
+    input {
+      width: 85%;
+    }
+  }
+}
+
+.description {
+  margin-top: 8px;
+  margin-bottom: 32px;
+
+  &, p {
+    @include font-style(10px, 400, $neutral_9, null, 14px, Rational);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on, 'ss06' on;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:active {
+      color: $purple;
+    }
+
+    @media(hover: hover) {
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+}
+
+.send_button {
+  @include display-flex(center, center);
+  background-color: $purple;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 300ms ease;
+
+  &:hover {
+    background-color: $purple_1;
+  }
+
+  &:focus {
+    background-color: $purple_2;
+  }
+
+  svg {
+    fill: $white;
+  }
+}

@@ -1,0 +1,157 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.paragraph_text {
+  margin-bottom: 20px;
+  line-height: 1.6;
+
+  blockquote {
+    position: relative;
+    padding: 12px 0 12px 12px;
+    margin-bottom: 0;
+
+    p {
+      @include font-style(15px, 500, $neutral_9, null, 1.75, RationalMedium);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: -8px;
+      bottom: 12px;
+      background-color: $purple;
+      width: 2px;
+
+      @include min-width($laptop) {
+        left: -12px;
+      }
+    }
+  }
+
+  pre {
+    padding: 24px 271px 24px 32px !important;
+    background: #17121F;
+    border-radius: 4px;
+  }
+
+  p {
+    @include font-style(15px, 400, $neutral_9, null, 1.6);
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      @include font-style(15px, 500, $neutral_9, null, 1.6, RationalMedium);
+    }
+  }
+
+  ol {
+    margin: 0;
+    padding-left: 15px;
+
+    li {
+      @include font-style(15px, 400, $neutral_9, null, 1.6);
+      margin-bottom: 12px;
+
+      strong {
+        font-weight: 500;
+        display: block;
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+
+    &[style*="list-style-type:square"] {
+      list-style-type: none !important;
+      li::before{
+        content: '';
+        top: 4px;
+        border-radius: 4px;
+        background: #F4E9FF url("data:image/svg+xml,%0A%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.3656 4.23431C13.678 4.54673 13.678 5.05327 13.3656 5.36569L6.96559 11.7657C6.65317 12.0781 6.14664 12.0781 5.83422 11.7657L2.63422 8.56569C2.3218 8.25327 2.3218 7.74673 2.63422 7.43431C2.94664 7.1219 3.45317 7.1219 3.76559 7.43431L6.3999 10.0686L12.2342 4.23431C12.5466 3.9219 13.0532 3.9219 13.3656 4.23431Z' fill='%23911FFF'/%3E%3C/svg%3E%0A") no-repeat center / 16px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    li {
+      position: relative;
+      @include font-style(15px, 400, $neutral_9, null, 1.6);
+      margin-bottom: 12px;
+      padding-left: 24px;
+
+      &::before {
+        content: '→';
+        position: absolute;
+        display: inline-block;
+        left: 0;
+        color: $purple;
+      }
+
+      strong {
+        @include font-style(null, 500, null, null, null, RationalMedium);
+      }
+    }
+  }
+
+  h2 {
+    @include font-style(24px, 500, $neutral_9, null, 1.6, RationalMedium);
+    padding-top: 20px;
+    margin-bottom: 12px;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  h3 {
+    @include font-style(18px, 500, $neutral_9, null, 1.6, RationalMedium);
+    padding-top: 16px;
+    margin-bottom: 12px;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  h4 {
+    @include font-style(15px, 500, $neutral_9, null, 1.6, RationalMedium);
+    margin-bottom: 12px;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  a {
+    color: $purple;
+
+    strong {
+      color: $purple;
+    }
+  }
+
+  img {
+    width: 100%;
+    padding: 16px 0;
+    margin: 8px 0;
+  }
+
+  > div {
+    &, iframe {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+
+    iframe {
+      aspect-ratio: 16/9;
+    }
+  }
+}

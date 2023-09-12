@@ -1,0 +1,204 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+
+  @include max-width($laptop) {
+    padding: 24px;
+
+    > div {
+      position: static;
+
+      > button {
+        top: 24px !important;
+        right: 72px !important;
+
+        &:last-child {
+          right: 24px !important;
+        }
+      }
+    }
+  }
+  @include max-width($tabletL) {
+    padding: 16px;
+
+    > div {
+      position: relative;
+
+      > button {
+        top: auto !important;
+        bottom: calc(100% + 32px) !important;
+      }
+    }
+  }
+}
+
+.top_content {
+  @include max-width($tabletL) {
+    max-width: 100%;
+    padding-right: 138px;
+  }
+  @include max-width($tabletL + 1) {
+    font-size: 28px;
+    line-height: 1.3;
+    padding-right: 16px;
+    margin-bottom: 96px;
+  }
+}
+
+.badge {
+  @include font-style(12px, 500, $neutral_9, null, 1, RationalMedium);
+  border: 1px solid $purple;
+  border-radius: 1000px;
+  padding: 4px 8px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.title {
+  @include font-style(36px, 400, $neutral_9, null, 1.3, RecklessNeue);
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+  max-width: 686px;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+}
+
+.bottom_content {
+  @include display-flex(space-between, null);
+  margin: 0;
+  padding: 0;
+}
+
+.content_without_space {
+  @include display-flex(space-between, null, wrap);
+  margin: 0;
+  padding: 0;
+}
+
+.card_item {
+  @include display-flex(space-between, null, null, column);
+  min-height: 380px;
+  padding: 24px 24px 32px;
+  background-color: $neutral_minus_8;
+  list-style-type: none;
+  border-radius: 16px;
+  flex: 1;
+  margin-right: 24px;
+
+  @include min-width($laptop) {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include max-width($laptop) {
+    height: auto;
+    width: 326px;
+    height: 491px;
+  }
+
+  @include max-width($tabletL) {
+    width: 326px;
+    margin-right: 24px;
+  }
+
+  @include max-width($phoneXL) {
+    max-width: 80vw;
+  }
+}
+
+.top_container {
+}
+
+.bottom_container {
+  margin-top: 24px;
+}
+
+.card_item_title {
+  @include font-style(14px, 500, $neutral_9, null, 1.2, RationalMedium);
+  display: inline-block;
+  background-color: $white;
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  border-radius: 1000px;
+}
+
+.image_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.card_item_text {
+  @include font-style(15px, 400, $neutral_9, null, 1.6, Rational);
+  margin: 0;
+}
+
+.card_item_link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  @include font-style(15px, 500, $neutral_9, null, 1.2, RationalMedium);
+  transition: color 500ms ease;
+
+  svg {
+    margin-top: 1px;
+    margin-left: 4px;
+    transition: fill 500ms ease;
+
+    path {
+      transition: fill 500ms ease;
+      fill: $neutral_9;
+    }
+  }
+
+  &:hover {
+    color: $purple;
+
+    svg {
+      fill: $purple;
+
+      path {
+        fill: $purple;
+      }
+    }
+
+    &:hover {
+      .default_icon {
+        opacity: 0;
+      }
+
+      .active_icon {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.active_icon {
+  position: absolute;
+  @include display-flex(center, center);
+  top: -1px;
+  right: -18px;
+  height: 20px;
+  transition: opacity 300ms ease;
+  opacity: 0;
+}
+
+.default_icon {
+  position: absolute;
+  @include display-flex(center, center);
+  top: -1px;
+  right: -21px;
+  width: 21px;
+  height: 20px;
+  transition: opacity 300ms ease;
+  opacity: 1;
+
+  svg {
+    fill: $neutral_9
+  }
+}

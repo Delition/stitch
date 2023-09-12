@@ -1,0 +1,257 @@
+@import 'styles/mixins';
+@import 'styles/variables';
+
+.wrapper {
+  position: relative;
+  padding: 128px 64px 0;
+  background-color: $neutral_9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include max-width($tabletXL) {
+    padding: 128px 32px 32px;
+  }
+  @include max-width($phoneXL) {
+    padding: 64px 16px 16px;
+  }
+}
+
+.content {
+  width: 50%;
+
+  &:not(:last-child) {
+    margin-right: 48px;
+  }
+
+  @include max-width($tabletXL) {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 48px;
+    }
+
+    &:last-child {
+      min-height: 364px;
+    }
+  }
+}
+
+.without_content {
+  display: none;
+}
+
+.list {
+  @include display-flex(null, center);
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.list_item {
+  list-style-type: none;
+  @include font-style(15px, 500, $neutral_9, null, 1.6, RationalMedium);
+  font-feature-settings: 'dlig' on;
+
+  a {
+    position: relative;
+    @include font-style(15px, 600, $neutral_9, null, 1.2, RationalSemiBold);
+    text-decoration: none;
+    background-color: transparent !important;
+    padding: 0;
+    margin: 0;
+
+    @include max-width($phoneS) {
+      font-size: 12px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @include max-width($phoneXL) {
+    letter-spacing: -0.04em;
+  }
+
+  @include max-width($phoneS) {
+    @include font-style(12px, 500, $neutral_9, null, 1.3, RationalMedium);
+  }
+}
+
+.hero_inner {
+  @include display-flex(null, center, null, column);
+  text-align: center;
+  max-width: 976px;
+  margin-inline: auto;
+  margin-bottom: 128px;
+  @include max-width($phoneXL) {
+    margin-bottom: 64px;
+  }
+}
+
+.hero_top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ticket {
+  @include font-style(12px, 500, $white, null, 1, RationalMedium);
+  font-style: italic;
+  text-transform: uppercase;
+  list-style-type: none;
+  padding: 8px 12px;
+  border-radius: 1000px;
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  @include max-width($phone) {
+    padding: 4px 8px;
+  }
+}
+
+.ticket_green {
+  background-color: $green;
+  color: $neutral_9;
+}
+
+.ticket_violet {
+  background-color: $purple_minus_6;
+  color: $purple;
+}
+
+.subtitle {
+  margin-left: 8px;
+  @include font-style(13px, 500, $white, null, 21px, RationalMedium);
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'onum' on;
+  text-align: left;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+  @include font-style(15px, 500, $white, null, 18px, RationalSemiBold);
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss06' on;
+
+  svg path {
+    transition: all .3s;
+  }
+
+  &:hover {
+    color: $purple;
+
+    svg path {
+      fill: $purple;
+    }
+  }
+}
+
+.title {
+  margin: 0 0 24px;
+
+  h1 {
+    @include font-style(72px, 400, $white, null, 1, RecklessNeue);
+    letter-spacing: -0.04em;
+    margin-bottom: 0;
+    font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+
+    strong {
+      font-family: RationalMedium;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      font-feature-settings: 'dlig' on;
+    }
+
+    em, i {
+      font-family: RationalMedium;
+      font-weight: 500;
+    }
+  }
+
+  @include max-width($tabletXL) {
+    h1 {
+      letter-spacing: -0.05em;
+      font-size: 64px;
+    }
+  }
+
+  @include max-width($phoneXL) {
+    h1 {
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: -0.04em;
+    }
+  }
+}
+
+.text {
+  &, p {
+    @include font-style(17px, 400, $white, null, 27px, Rational);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'onum' on;
+  }
+
+  margin: 0 0 64px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @include max-width($laptop) {
+    &, p {
+      letter-spacing: 0;
+    }
+    max-width: 640px;
+  }
+
+  @include max-width($phoneXL) {
+    &, p {
+      font-size: 15px;
+      line-height: 24px;
+    }
+  }
+}
+
+.hero_video {
+  background-color: $neutral_9;
+  padding-bottom: 64px;
+  contain: paint;
+
+  &_mobile {
+    margin: 0;
+  }
+
+  &_wrapper {
+    position: relative;
+    max-width: calc(100% - 128px);
+    width: 100%;
+    height: 300vh;
+    margin-inline: auto;
+    contain: paint;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include max-width($tablet) {
+      max-width: calc(100% - 64px);
+      height: 250vh;
+    }
+  }
+
+  &_video {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 60vh;
+    display: block;
+    object-fit: cover;
+    @include max-width($tablet) {
+      height: 80vh;
+    }
+  }
+}

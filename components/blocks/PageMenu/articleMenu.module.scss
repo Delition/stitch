@@ -1,0 +1,145 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  @include font-style(21px, 400, $neutral_9, null, 1.6);
+  position: sticky;
+  top: 50px;
+  margin-bottom: 450px;
+
+  h2 {
+    @include font-style(21px, 500, $neutral_9, null, 1.75, RationalMedium);
+  }
+
+  @include max-width($tabletL) {
+    position: static;
+    margin-bottom: 32px;
+  }
+}
+
+.menu_list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.menu_item {
+  @include font-style(13px, 400, $neutral_9, null, 1.2);
+  margin-bottom: 12px;
+
+
+  &:hover {
+    span {
+      color: $purple;
+    }
+  }
+
+  span {
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+}
+
+.social_wrapper {
+  margin-top: auto;
+
+  @include max-width($tabletL) {
+    position: static;
+    @include display-flex(space-between);
+  }
+
+  @include max-width($phoneXL) {
+    @include display-flex(null, null, null, column);
+  }
+}
+
+.share_wrapper {
+
+  @include max-width($tabletL) {
+    @include display-flex(center, center);
+    height: 24px;
+  }
+
+  @include max-width($phoneXL) {
+    @include display-flex(space-between, null, null);
+    margin-bottom: 32px;
+  }
+}
+
+.social_title {
+  @include font-style(15px, 400, $neutral_9, null, 1.2);
+  margin: 0 0 24px;
+
+  @include max-width($tabletL) {
+    margin: 0 24px 0 0;
+  }
+}
+
+.social_list {
+  @include display-flex(null, center);
+  margin: 0 0 48px;
+  padding: 0;
+
+  @include max-width($tabletL) {
+    margin: 0;
+  }
+}
+
+.social_item {
+  list-style-type: none;
+  width: 24px;
+  height: 24px;
+
+  div {
+    @include display-flex(center, center);
+    width: 100%;
+    height: 100%;
+
+    svg {
+      height: 16px;
+    }
+  }
+
+  button {
+    @include display-flex(center, center);
+    width: 100%;
+    height: 100%;
+
+    svg {
+      height: 16px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+}
+
+.newsletter_wrapper {
+
+  div {
+    max-width: 310px;
+    width: 100%;
+
+    input {
+      width: 260px;
+      background-color: $neutral_minus_8;
+      border: none;
+    }
+
+    h3 {
+      color: $neutral_9;
+    }
+  }
+
+  @include max-width($phoneXL) {
+    div {
+      width: 100%;
+
+      input {
+        width: 85%;
+      }
+    }
+  }
+}

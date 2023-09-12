@@ -1,0 +1,103 @@
+@import 'styles/mixins';
+@import 'styles/variables';
+
+.wrapper {
+  font-family: Rational;
+  padding: 64px;
+  text-align: center;
+
+  @include max-width($tabletL) {
+    padding: 48px 24px;
+  }
+
+  @include max-width($phoneXL) {
+    padding: 32px 16px;
+  }
+}
+
+.violet{
+  background: $purple_minus_6;
+}
+
+.badge {
+  display: inline-block;
+  @include font-style(12px, 500, $purple, null, 1, RationalMedium);
+  padding: 4px 8px;
+  background-color: $purple_minus_6;
+  border-radius: 1000px;
+  margin-bottom: 8px;;
+}
+
+.title {
+  max-width: 744px;
+  margin-inline: auto;
+  margin-bottom: 48px;
+
+  h1 {
+    @include font-style(64px, 400, $neutral_9, null, 1, RecklessNeue);
+    font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+
+    strong {
+      @include font-style(64, 500, $neutral_9, null, 1, RationalMedium);
+      font-feature-settings: 'pnum' off, 'lnum' off, 'ss03' off, 'ss05' off, 'ss07' off, 'ss06' off, 'ss11' off, 'ss12' off, 'ss13' off, 'ss10' off, 'liga' on, 'dlig' on;
+      letter-spacing: -0.06em;
+    }
+  }
+
+  p {
+    display: inline-block;
+    @include font-style(17px, 500, $neutral_9, null, 1.6);
+    margin-bottom: 0;
+  }
+
+  @include max-width($phoneXL) {
+    margin-bottom: 32px;
+    h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.text {
+  @include font-style(17px, 400, $neutral_9, null, 1.6);
+  margin: 0 0 64px;
+}
+
+.buttons_wrapper {
+  a {
+    display: inline-block;
+    @include font-style(15px, 500, null, null, 18px);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    padding: 4px 12px;
+    border-radius: 1000px;
+    transition: all .15s ease;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    &:not(.active_link) {
+      &:hover {
+        background-color: $purple_minus_6;
+        color: $neutral_9;
+      }
+    }
+  }
+
+  .active_link {
+    background-color: $purple;
+    color: $white;
+  }
+
+  .dark_link {
+    color: $white;
+  }
+
+  .light_link {
+    color: $neutral_9;
+  }
+}

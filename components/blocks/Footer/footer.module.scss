@@ -1,0 +1,220 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 64px;
+  background-color: $neutral_minus_7;
+
+  @include max-width($tabletL) {
+    padding: 32px;
+  }
+  @include max-width($phoneXL) {
+    padding: 16px;
+  }
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.input_wrapper {
+  @include display-flex(space-between);
+  margin-bottom: 48px;
+
+  @include max-width($tabletXL) {
+    flex-direction: column;
+  }
+
+  &_left {
+    margin-right: 24px;
+    @include max-width($tabletXL) {
+      margin: 0 0 48px;
+    }
+  }
+
+  &_right {
+    display: flex;
+    gap: 24px;
+
+    @include max-width($laptopS - 40) {
+      gap: 8px;
+    }
+    @include max-width($tabletXL) {
+      justify-content: space-between;
+    }
+  }
+}
+
+.social_list {
+  @include display-flex();
+  gap: 8px;
+}
+
+.social_link {
+  @include display-flex(center, center);
+  width: 24px;
+  height: 24px;
+
+  svg path {
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    svg path {
+      fill: $purple;
+    }
+  }
+}
+
+.menu_wrapper {
+  @include display-flex(null, null, null, column);
+  padding: 0;
+  min-width: 143px;
+  @include max-width($tabletL) {
+    min-width: auto;
+  }
+}
+
+.menu_item_title {
+  display: block;
+  @include font-style(15px, 400, $neutral, null, 18px, Rational);
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  @include max-width($phoneXL) {
+    @include font-style(12px, 400, $neutral, null, 14px, Rational);
+    margin-bottom: 16px;
+  }
+}
+
+.menu_item_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  @include display-flex(null, null, null, column);
+  gap: 16px;
+}
+
+.menu_item_address {
+  @include font-style(12px, 500, $white, null, 1, RationalMedium);
+  margin-bottom: 0;
+
+  span {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.menu_item_link {
+  @include font-style(15px, 400, $neutral_9, null, 18px, Rational);
+  letter-spacing: -0.01em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  &:hover {
+    color: $purple;
+  }
+
+  @include max-width($phoneXL) {
+    @include font-style(12px, 400, $neutral_9, null, 14px, Rational);
+  }
+}
+
+.footer_bottom {
+  @include display-flex(space-between, center);
+  border-top: 1px solid $neutral_9;
+  padding-top: 16px;
+  gap: 8px 24px;
+
+  @include max-width($tabletXL) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  @include max-width($phoneXL) {
+    gap: 16px;
+  }
+}
+
+.bottom_menu {
+  @include display-flex(null, center, wrap);
+  gap: 8px 24px;
+
+  a {
+    &:active {
+      color: $purple;
+    }
+
+    @media(hover: hover) {
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+
+  @include max-width($phoneXL) {
+    @include display-flex(null, flex-start);
+    gap: 8px;
+
+    address {
+      order: -2;
+    }
+    a {
+      order: -1;
+    }
+  }
+}
+
+.bottom_menu_inner {
+  display: flex;
+  gap: 24px;
+  @include max-width($phoneXL) {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+.bottom_menu_item {
+  @include font-style(12px, 500, $neutral, null, 12px, RationalMedium);
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.bottom_list {
+  @include display-flex(flex-end, null, wrap);
+  margin: 0;
+  padding: 0;
+  gap: 8px 20px;
+
+  @include max-width($tabletXL) {
+    flex-wrap: wrap;
+  }
+
+  @include max-width($phoneXL) {
+    justify-content: flex-start;
+    gap: 8px 24px;
+    width: 100%;
+  }
+}
+
+.bottom_list_item {
+  list-style-type: none;
+
+  a {
+    @include font-style(12px, 500, $neutral_9, null, 1, RationalMedium);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    padding: 4px 0;
+
+    &:active {
+      color: $purple;
+    }
+
+    @media(hover: hover) {
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+}

@@ -1,0 +1,356 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  @include display-flex(space-between);
+  padding: 64px;
+
+  @include max-width($tabletL) {
+    @include display-flex(null, null, wrap, column);
+    padding: 48px 24px;
+  }
+
+  @include max-width($phoneXL) {
+    padding: 32px 16px;
+  }
+}
+
+.content_left {
+  position: relative;
+  width: 39.6%;
+  margin: 0 24px 0 0;
+
+  @include max-width($tabletL) {
+    width: 100%;
+    position: static;
+    margin: 0 0 32px;
+  }
+}
+
+.featured_wrapper {
+  position: sticky;
+  top: 20px;
+
+  a {
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 9px 11px 9px 19px;
+    border: 1px solid $neutral_9;
+    border-radius: 12px;
+
+    svg {
+      path{
+        fill: $neutral_9;
+      }
+    }
+
+    &:hover {
+      background: $neutral_minus_8;
+      border: 1px solid $purple;
+
+      svg {
+        path{
+          fill: $purple;
+        }
+      }
+    }
+  }
+}
+
+.featured_overflow {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  > div,
+  > div > a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+  }
+}
+
+.featured_link {
+  position: relative;
+  z-index: 2;
+}
+
+.featured_image {
+  display: inline-block;
+  margin-bottom: 16px;
+
+  img {
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+.content_header {
+  @include display-flex(space-between, center);
+  margin-bottom: 16px;
+}
+
+.featured_header_red {
+  h3 {
+    background-color: $red;
+  }
+
+  span {
+    color: $red;
+  }
+}
+
+.featured_header_green {
+  h3 {
+    background-color: $green_1;
+  }
+
+  span {
+    color: $green_1;
+  }
+}
+
+.featured_header_orange {
+  h3 {
+    background-color: $orange;
+  }
+
+  span {
+    color: $orange;
+  }
+}
+
+.featured_header_violet {
+  h3 {
+    background-color: $purple_minus_4;
+  }
+
+  span {
+    color: $purple_minus_4;
+  }
+}
+
+.featured_header_blue {
+  h3 {
+    background-color: $blue;
+  }
+
+  span {
+    color: $blue;
+  }
+}
+
+.featured_header_yellow{
+  h3 {
+    background-color: $yellow;
+  }
+
+  span {
+    color: $yellow;
+  }
+}
+
+.featured_header {
+  h3 {
+    background-color: $white;
+    border: 1px solid $neutral_9;
+    color: $neutral_9
+  }
+
+  span {
+    color: $neutral_9;
+  }
+}
+
+.category_wrapper{
+  @include display-flex(null, center);
+}
+
+.category{
+  @include font-style(12px, 500, $white, null, 1);
+  padding: 6px 12px;
+  border-radius: 1000px;
+  margin-right: 4px;
+}
+
+.featured_category {
+  @include font-style(12px, 500, $neutral_9, null, 1, RationalMedium);
+  border: 1px solid $neutral_9;
+  background-color: $white !important;
+  padding: 6px 12px;
+  border-radius: 1000px;
+}
+
+.featured_date {
+  @include font-style(11px, 400, $neutral_9, null, 1.3, RationalTW);
+}
+
+.featured_title {
+  @include font-style(36px, 400, $neutral_9, null, 1.3, RecklessNeue);
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.featured_author {
+  @include font-style(14px, 400, $neutral_9, null, 1.2);
+  margin-bottom: 24px;
+
+  span{
+    font-style: italic;
+  }
+}
+
+.featured_description {
+  @include font-style(17px, 400, $neutral_9, null, 1.6);
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+
+.dividing_line {
+  display: inline-block;
+  width: 1px;
+  height: auto;
+  background-color: $neutral_minus_5;
+  margin: 0 24px 0 0;
+
+  @include max-width($tabletL) {
+    width: 100%;
+    height: 2px;
+    margin: 0 0 32px;
+  }
+}
+
+.content_right {
+  width: 56.7%;
+
+  @include max-width($tabletL) {
+    width: 100%;
+  }
+}
+
+.blog_category {
+  @include display-flex(space-between);
+  margin-bottom: 64px;
+}
+
+.category_title {
+  @include font-style(15px, 500, $neutral_9, null, 1.2, RationalMedium);
+
+  margin-right: 40px;
+}
+
+.category_list {
+  @include display-flex($wrap: wrap);
+  margin: 0;
+  padding: 0;
+}
+
+.category_item {
+  @include font-style(12px, 500, $neutral_9, null, 1, RationalMedium);
+  border-radius: 1000px;
+  list-style-type: none;
+  padding: 8px 12px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $neutral_minus_8;
+    color: $purple;
+  }
+
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+}
+
+.category_item_red {
+  color: $white;
+  background-color: $red;
+
+  &:hover{
+    color: $white;
+    background-color: $red;
+}
+}
+
+.category_item_green {
+  color: $white;
+  background-color: $green;
+
+  &:hover{
+    color: $white;
+    background-color: $green;
+  }
+}
+
+.category_item_violet {
+  color: $white;
+  background-color: $purple;
+
+  &:hover {
+    color: $white;
+    background-color: $purple;
+  }
+}
+
+.category_item_orange {
+  color: $white;
+  background-color: $orange;
+
+  &:hover{
+    color: $white;
+    background-color: $orange;
+  }
+}
+
+.category_item_yellow {
+  color: $white;
+  background-color: $yellow;
+
+  &:hover{
+    color: $white;
+    background-color: $yellow;
+  }
+}
+
+.category_item_blue {
+  color: $white;
+  background-color: $blue_minus_1;
+
+  &:hover{
+    color: $white;
+    background-color: $blue_minus_1;
+  }
+}
+
+.category_item_purple {
+  color: $white;
+  background-color: $purple;
+
+  &:hover{
+    color: $white;
+    background-color: $purple;
+  }
+}
+
+.category_item_featured {
+  border: 1px solid $neutral_9;
+}
+
+.blog_content > ul > li > div:last-child {
+  padding: 0;
+}
+
+.content_item_title {
+  @include font-style(24px, 400, $neutral_9, null, 1.6, RecklessNeue);
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}

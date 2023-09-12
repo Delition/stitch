@@ -1,0 +1,207 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 16px 12px 24px;
+  background-color: $purple;
+  color: $white;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 500;
+  font-family: RationalMedium;
+  cursor: pointer;
+  transition: all 300ms ease;
+  gap: 8px;
+  text-align: left;
+
+  &:hover {
+    .default_icon {
+      opacity: 0;
+    }
+
+    .active_icon {
+      opacity: 1;
+    }
+  }
+
+  @include max-width($phone) {
+    justify-content: center;
+    padding: 12px 14px 12px 22px;
+  }
+
+  @include max-width($phoneS) {
+    font-size: 12px;
+  }
+}
+
+.primary_link {
+  background-color: $purple;
+  color: $white;
+  transition: all 300ms ease;
+
+  svg {
+    fill: $white;
+  }
+
+  span {
+    svg {
+      fill: $white;
+    }
+  }
+
+  &:hover {
+    background-color: $purple_1;
+    color: $white;
+  }
+
+  &:focus {
+    background-color: $purple_2;
+  }
+}
+
+.secondary_link {
+  background-color: transparent;
+  color: $neutral_9;
+  transition: all 300ms ease;
+
+  .arrow_wrapper {
+    left: 0;
+  }
+
+  svg {
+    path {
+      transition: all 300ms ease;
+      fill: $neutral_9;
+    }
+  }
+
+  &:hover {
+    color: $purple;
+    background-color: $neutral_minus_8;
+
+    svg {
+      fill: $purple;
+
+      path {
+        fill: $purple;
+      }
+    }
+  }
+
+  &:focus {
+    color: $purple_2;
+
+    svg {
+      fill: $purple_2;
+    }
+  }
+}
+
+.active_link {
+  background-color: $purple;
+  color: $white !important;
+}
+
+.prev_links_icon {
+  margin-right: 8px;
+
+  svg {
+    margin-left: 0;
+
+    path {
+      fill: $purple;
+    }
+  }
+}
+
+.arrow_wrapper {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  left: -9px;
+}
+
+.active_icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 300ms ease;
+  opacity: 0;
+}
+
+.default_icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 300ms ease;
+  opacity: 1;
+
+  svg {
+    fill: $neutral_9
+  }
+}
+
+.contact_button {
+  background-color: transparent;
+  color: $neutral_9;
+  transition: all 300ms ease;
+
+  .active_icon {
+    right: -5px;
+  }
+
+  svg {
+    path {
+      transition: all 300ms ease;
+      fill: $neutral_9;
+    }
+  }
+
+  &:hover {
+    color: $purple;
+    background-color: $neutral_minus_8;
+
+    svg {
+      fill: $purple;
+
+      path {
+        fill: $purple;
+      }
+    }
+  }
+
+  &:focus {
+    color: $purple_2;
+
+    svg {
+      fill: $purple_2;
+    }
+  }
+}
+
+.yellow_link {
+  background-color: $yellow;
+  color: $neutral_9;
+
+  &:hover {
+    color: inherit;
+    background-color: $yellow_minus_2;
+  }
+
+  svg {
+    &, path {
+      transition: all .3s ease;
+      fill: $neutral_9;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.input_wrapper {
+  position: relative;
+
+  input {
+    @include font-style(15px, 500, $neutral_9, null, 1.2, RationalMedium);
+    font-feature-settings: 'dlig' on;
+    padding: 15px 16px;
+    height: 48px;
+    border: 1px solid $neutral_minus_5;
+    border-radius: 12px;
+
+    &:hover {
+      border-color: $purple;
+      box-shadow: none;
+    }
+  }
+}
+
+.label {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  @include font-style(15px, 500, $neutral_9, null, 1.2, RationalMedium);
+  font-feature-settings: 'dlig' on;
+  font-size: 15px !important;
+
+  span{
+    color: $purple;
+    margin-left: 2px;
+  }
+}

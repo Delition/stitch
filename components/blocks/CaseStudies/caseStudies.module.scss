@@ -1,0 +1,339 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.badge {
+  @include font-style(12px, 500, $neutral_9, null, 14px, RationalMedium);
+  border: 1px solid $purple;
+  letter-spacing: -0.01em;
+  border-radius: 1000px;
+  padding: 4px 8px;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-feature-settings: unset;
+  @media (max-width: $tablet) {
+    margin-bottom: 12px;
+  }
+}
+
+.title {
+  @include font-style(36px, 400, $neutral_9, null, 1.3, RecklessNeue);
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+  max-width: 686px;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+  @media (max-width: $laptopS) {
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+  @media (max-width: $tablet) {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.case_studies {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media (max-width: $tablet) {
+    padding: 16px;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    border-radius: 24px;
+    padding: 32px;
+    overflow: hidden;
+
+    > div {
+      max-width: 100%;
+    }
+  }
+
+  &__top {
+    @media (min-width: $tabletXL + 1) {
+      display: grid;
+      grid-template-columns: 2fr repeat(2, 1fr);
+      margin-bottom: 80px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__title {
+    margin-right: 64px;
+    max-width: 656px;
+    width: 100%;
+    @include font-style(36px, 400, $neutral_9, null, 47px, RecklessNeue);
+    letter-spacing: -0.02em;
+    font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on;
+  }
+
+  &__item {
+    &_title {
+      display: block;
+      margin-bottom: 8px;
+      @include font-style(15px, 600, $purple, null, 24px, RationalSemiBold);
+      letter-spacing: -0.01em;
+      font-feature-settings: 'pnum' on, 'onum' on;
+    }
+
+    &_text {
+      @include font-style(15px, 400, $neutral_9, null, 24px, Rational);
+      letter-spacing: -0.01em;
+      font-feature-settings: 'pnum' on, 'onum' on;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    @media (max-width: $tabletXL) {
+      &:not(:first-child) {
+        max-width: calc(50% - 8px);
+      }
+    }
+    @media (max-width: $tablet) {
+      &:not(:first-child) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &_dark {
+    .badge, .title {
+      color: $white;
+      border-color: #B76BFF;
+    }
+
+    .case_studies {
+      &__item {
+        &_title {
+          color: #B76BFF;
+        }
+
+        &_text {
+          color: $white
+        }
+      }
+
+      &__wrapper > div > button {
+        border-color: $white;
+        background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' fill-rule='evenodd' d='M12.9697 3.96967c.2929-.29289.7677-.29289 1.0606 0l7.5 7.50003c.1407.1406.2197.3314.2197.5303 0 .1989-.079.3897-.2197.5303l-7.5 7.5c-.2929.2929-.7677.2929-1.0606 0-.2929-.2929-.2929-.7677 0-1.0606l6.2196-6.2197H3c-.41421 0-.75-.3358-.75-.75s.33579-.75.75-.75h16.1893l-6.2196-6.21967c-.2929-.29289-.2929-.76777 0-1.06066Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A") no-repeat center / 24px;
+      }
+    }
+
+    .testimonial {
+      &__title, &__job, &__link {
+        color: $white;
+      }
+
+      &__link {
+        a {
+          color: $white;
+          border-color: $white;
+
+          svg, svg path {
+            fill: $white;
+          }
+
+          &:hover {
+            background-color: rgba($white, 0.2);
+            border-color: rgba($white, .6);
+          }
+        }
+      }
+    }
+  }
+
+  &_light {
+    .badge, .title {
+      color: $neutral_9;
+    }
+
+    .case_studies {
+      &__item {
+        &_title {
+          color: $purple;
+        }
+
+        &_text {
+          color: $neutral_9;
+        }
+      }
+
+      &__wrapper > div > button {
+        border-color: $neutral_9;
+
+        &::before {
+          background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%2317121F' fill-rule='evenodd' d='M12.9697 3.96967c.2929-.29289.7677-.29289 1.0606 0l7.5 7.50003c.1407.1406.2197.3314.2197.5303 0 .1989-.079.3897-.2197.5303l-7.5 7.5c-.2929.2929-.7677.2929-1.0606 0-.2929-.2929-.2929-.7677 0-1.0606l6.2196-6.2197H3c-.41421 0-.75-.3358-.75-.75s.33579-.75.75-.75h16.1893l-6.2196-6.21967c-.2929-.29289-.2929-.76777 0-1.06066Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A") no-repeat center / 24px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $laptopS) {
+    &__wrapper {
+      gap: 24px;
+      padding: 24px;
+    }
+    @media (max-width: $tablet) {
+      &__wrapper {
+        gap: 32px;
+        padding: 16px;
+      }
+    }
+    &__title {
+      max-width: 100%;
+      margin: 0 0 32px;
+    }
+  }
+  @media (max-width: $tablet) {
+    &__item {
+      max-width: 100%;
+    }
+  }
+}
+
+.testimonial {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__inner {
+    display: flex !important;
+    gap: 64px;
+    @media (max-width: $tabletXL) {
+      gap: 40px;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    @include font-style(24px, 400, $neutral_9, null, 31px, Rational);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    margin-bottom: 16px;
+
+    p {
+      position: relative;
+      margin: 0;
+
+      &::before {
+        content: '“';
+        position: absolute;
+        right: 100%;
+      }
+    }
+  }
+
+  &__job {
+    @include font-style(15px, 500, $neutral_9, null, 18px, RationalMedium);
+    letter-spacing: -0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    margin-bottom: 48px;
+  }
+
+  &__image {
+    width: 300px;
+    height: 300px;
+    background: #F3F3F4;
+    border-radius: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__link {
+    a {
+      border: 1px solid $neutral_9;
+      transition: all 300ms ease;
+
+      &:hover {
+        border: 1px solid $purple;
+      }
+
+      &:focus {
+        border: 1px solid $purple_2;
+      }
+    }
+  }
+
+  &_button {
+    position: absolute;
+    z-index: 9;
+    bottom: 0;
+    right: 0;
+    @media(hover: hover) {
+      cursor: pointer;
+      &:hover {
+        opacity: .4;
+      }
+    }
+
+    &_prev, &_next {
+      width: 40px;
+      height: 40px;
+      transform: none;
+      border: 1px solid $neutral_9;
+      border-radius: 1000px;
+      flex-shrink: 0;
+      transition: all .3s ease;
+
+      background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%2317121F' fill-rule='evenodd' d='M12.9697 3.96967c.2929-.29289.7677-.29289 1.0606 0l7.5 7.50003c.1407.1406.2197.3314.2197.5303 0 .1989-.079.3897-.2197.5303l-7.5 7.5c-.2929.2929-.7677.2929-1.0606 0-.2929-.2929-.2929-.7677 0-1.0606l6.2196-6.2197H3c-.41421 0-.75-.3358-.75-.75s.33579-.75.75-.75h16.1893l-6.2196-6.21967c-.2929-.29289-.2929-.76777 0-1.06066Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A") no-repeat center / 24px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &_prev {
+      right: 48px;
+      transform: rotate(180deg);
+    }
+
+    &[disabled] {
+      opacity: .5;
+      cursor: default;
+    }
+  }
+
+  @media (max-width: $tabletXL) {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (max-width: $tablet) {
+    &__title {
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: -0.02em;
+    }
+  }
+}
+
+.swiper_slide {
+  filter: grayscale(1);
+  opacity: 0.4;
+
+  &.parents_active {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+}
+
+.partners {
+  max-width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &_item {
+    width: auto !important;
+  }
+}

@@ -1,0 +1,246 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  padding: 32px;
+
+  @include max-width($tabletXL) {
+    padding: 24px;
+  }
+
+  @include max-width($phoneXL) {
+    padding: 16px;
+  }
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.content_wrapper {
+  @include display-flex(center, center);
+  background-color: $neutral_9;
+  border-radius: 24px;
+  padding: 64px;
+  gap: 64px;
+
+  &__left {
+    flex-direction: row-reverse;
+  }
+
+  @include max-width($tabletXL) {
+    @include display-flex($direction: column);
+    padding: 32px 24px;
+    &__right {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @include max-width($phoneXL) {
+    padding: 32px 16px;
+    gap: 24px;
+  }
+}
+
+.left {
+  width: 50%;
+  margin: 0;
+
+  @include max-width($tabletXL) {
+    width: 100%;
+  }
+
+  @include max-width($phoneXL) {
+    padding: 0 16px;
+  }
+
+  @include max-width($phone) {
+    padding: 0;
+  }
+}
+
+.right {
+  @include display-flex(center, center);
+  width: 50%;
+
+  @include max-width($tabletXL) {
+    width: 75%;
+    margin-bottom: 48px;
+    margin-inline: auto;
+  }
+
+  @include max-width($phoneXL) {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.badges_list {
+  @include display-flex();
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.badge {
+  @include font-style(12px, 500, $white, null, 1, RationalMedium);
+  list-style-type: none;
+  border: 1px solid $purple;
+  border-radius: 1000px;
+  padding: 4px 8px;
+  font-feature-settings: 'dlig' on;
+}
+
+.title {
+  @include font-style(36px, 400, $white, null, 1.3, RecklessNeue);
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'ss05' on, 'ss07' on, 'ss06' on, 'ss11' on, 'ss12' on, 'ss13' on, 'ss10' on, 'liga' on;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+
+  @include max-width($tablet) {
+    line-height: 1.3;
+  }
+
+  @include max-width($phoneXL) {
+    font-size: 28px;
+  }
+}
+
+.text_wrapper {
+  @include display-flex(space-between);
+  margin-bottom: 32px;
+  gap: 16px;
+
+  p {
+    @include font-style(15px, 400, $white, null, 1.6);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  strong {
+    display: block;
+    font-weight: 500;
+    font-family: RationalMedium;
+    margin-bottom: 8px;
+    font-feature-settings: 'dlig' on;
+
+    @include max-width($phoneXL) {
+      display: none;
+    }
+  }
+
+  @include max-width($phoneXL) {
+    gap: 12px;
+    @include display-flex($direction: column);
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.text_right,
+.text_left {
+  flex-grow: 1;
+  min-width: 50%;
+  a {
+    color: $purple_minus_2;
+  }
+
+  @include max-width($phoneXL) {
+    min-width: 100%;
+  }
+}
+
+.buttons_wrapper {
+  @include display-flex();
+
+  div {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+.links_wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+
+  span {
+    margin-right: 8px !important;
+  }
+
+  svg {
+    margin: 2px 0 0 4px;
+    fill: $white;
+  }
+
+  @include max-width($phoneXL) {
+    margin-bottom: 24px;
+  }
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  @include font-style(15px, 500, $white, null, 1.2, RationalMedium);
+  cursor: pointer;
+  font-feature-settings: 'dlig' on;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  .default_icon {
+    top: -1px;
+  }
+
+  &:hover {
+    color: $purple_minus_2;
+
+    .default_icon {
+      svg {
+        opacity: 0;
+      }
+
+      .active_icon {
+        opacity: 1;
+
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+.active_icon {
+  position: absolute;
+  @include display-flex(center, center);
+  top: -1px;
+  right: -5px;
+  height: 20px;
+  transition: opacity 300ms ease;
+  opacity: 0;
+}
+
+.default_icon {
+  position: relative;
+  @include display-flex(center, center);
+  top: 0;
+  right: 0;
+  width: 21px;
+  height: 20px;
+  transition: opacity 300ms ease;
+  opacity: 1;
+
+  svg {
+    fill: $white
+  }
+
+  span {
+    svg {
+      fill: $purple_minus_2;
+    }
+  }
+}

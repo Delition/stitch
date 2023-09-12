@@ -1,0 +1,173 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  @include display-flex(space-between);
+  position: relative;
+  z-index: 10;
+  padding: 16px;
+  height: 74px;
+  transition: transform 0.4s ease-in-out, background-color .25s ease-in-out;
+}
+
+.scroll_trigger {
+  position: relative;
+  top: -60px;
+}
+
+.logo_link {
+  cursor: pointer;
+}
+
+.logo_wrapper {
+  @include display-flex(center, center);
+  cursor: pointer;
+
+  img {
+    display: block;
+  }
+}
+
+.navigation {
+  @include display-flex(null, center);
+
+  .dropdown_item {
+    @include display-flex(null, center);
+    @include font-style(14px, 500, $neutral_9, null, null, RationalMedium);
+    color: $neutral_9;
+    padding: 8px 12px;
+    font-feature-settings: 'dlig' on;
+
+    :hover {
+      color: $purple;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+.burger_menu_wrapper {
+  @include display-flex(center, center);
+  width: 40px;
+  height: 40px;
+
+  @media (hover: hover) {
+    &:focus, &:hover {
+      svg {
+        rect {
+          fill: $purple;
+        }
+
+        path {
+          fill: $purple;
+        }
+      }
+    }
+  }
+}
+
+.mobile_navigation {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 2;
+  background: $white;
+  @include display-flex($direction: column);
+  padding: 36px 16px 8px;
+
+  a {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  .dropdown_item {
+    @include display-flex(null, center);
+    @include font-style(14px, 500, $neutral_9, null, null, RationalMedium);
+    color: $neutral_9;
+    padding: 8px 12px;
+    font-feature-settings: 'dlig' on;
+
+    :hover {
+      color: $purple;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+.mobile_close {
+  transform: translateY(-100%);
+  background: transparent;
+  visibility: hidden;
+  transition: all 400ms ease;
+
+  a {
+    opacity: 0;
+    transition: all 100ms ease;
+  }
+}
+
+.mobile_open {
+  transform: translateY(0);
+  transition: all 500ms ease;
+
+  a {
+    opacity: 1;
+    transition: all 1000ms ease;
+  }
+}
+
+.icon_wrapper {
+  width: 20px;
+  margin-right: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.default_icon {
+  position: absolute;
+  @include display-flex(center, center);
+  top: 9px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  transition: opacity 300ms ease;
+  opacity: 1;
+
+  svg {
+    width: auto;
+    height: auto;
+
+    path {
+      fill: $neutral_9
+    }
+  }
+}
+
+.active_icon {
+  position: absolute;
+  @include display-flex(center, center);
+  top: 9px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  transition: opacity 300ms ease;
+  opacity: 0;
+
+  svg {
+    width: auto;
+    height: auto;
+  }
+}

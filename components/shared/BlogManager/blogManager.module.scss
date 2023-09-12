@@ -1,0 +1,11 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.blog_manager_wrapper {
+  width: 63%;
+
+  @include max-width($tabletL){
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}

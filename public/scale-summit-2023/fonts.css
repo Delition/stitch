@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Aeonik Regular;
+  src: url(https://stitch.money/fonts/scale-summit-2023/aeonik-regular.woff2) format("woff2"),
+       url(https://stitch.money/fonts/scale-summit-2023/aeonik-regular.woff) format("woff"),
+       url(https://stitch.money/fonts/scale-summit-2023/aeonik-regular.ttf) format("ttf");
+  font-display: block;
+}
+
+@font-face {
+  font-family: Aeonik Regularitalic;
+  src: url(https://stitch.money/fonts/scale-summit-2023/aeonik-regularitalic.woff2) format("woff2"),
+       url(https://stitch.money/fonts/scale-summit-2023/aeonik-regularitalic.woff) format("woff"),
+       url(https://stitch.money/fonts/scale-summit-2023/aeonik-regularitalic.ttf) format("ttf");
+  font-display: block;
+}
+
+@font-face {
+  font-family: Aeonik Medium;
+  src: url(https://stitch.money/fonts/scale-summit-2023/aeonik-medium.woff2) format("woff2"),
+       url(https://stitch.money/fonts/scale-summit-2023/aeonik-medium.woff) format("woff"),
+       url(https://stitch.money/fonts/scale-summit-2023/aeonik-medium.ttf) format("ttf");
+  font-display: block;
+}
